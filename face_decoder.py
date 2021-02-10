@@ -4,10 +4,10 @@ import numpy as np
 from scipy.io import loadmat
 import platform
 
-is_windows = platform.system() == "Windows"
+# is_windows = platform.system() == "Windows"
 
-if not is_windows:
-	from renderer import mesh_renderer
+# if not is_windows:
+from renderer import mesh_renderer
 ###############################################################################################
 # Reconstruct 3D face based on output coefficients and facemodel
 ###############################################################################################
@@ -261,11 +261,10 @@ class Face3D():
 		return face_shape_t
 
 	def Render_block(self,face_shape,face_norm,face_color,camera_scale,f_scale,facemodel,batchsize,is_train=True):
-		if is_train and is_windows:
-			raise ValueError('Not support training with Windows environment.')
-
-		if is_windows:
-			return [],[],[]
+		# if is_train and is_windows:
+		# 	raise ValueError('Not support training with Windows environment.')
+		# if is_windows:
+		# 	return [],[],[]
 
 		# render reconstruction images 
 		n_vex = int(facemodel.idBase.shape[0].value/3)
